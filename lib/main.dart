@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'image_widgets.dart';
+import 'dropdown_button.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,14 +16,15 @@ class MyApp extends StatelessWidget {
       title: 'My Counter App',
       theme: ThemeData(
           primarySwatch: Colors.teal,
+          //textButtonTheme: TextButtonThemeData(style: ButtonStyle( backgroundColor: MaterialStateProperty.all(Colors.blue))),//Burada uygulama içerisinde eklenen bütün textButton'ların temel stili bu şekilde ayarlanıyor.
           textTheme: const TextTheme(
               headline1: TextStyle(
                   color: Colors.purple, fontWeight: FontWeight.bold))),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('İmage Examples'),
+          title: const Text('DropdownButton Example'),
         ),
-        body: ImageOrnekleri(),
+        body: const DropDownButton(),
       ),
     );
   }
