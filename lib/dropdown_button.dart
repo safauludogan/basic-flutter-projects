@@ -9,7 +9,7 @@ class DropDownButton extends StatefulWidget {
 
 class _DropDownButtonState extends State<DropDownButton> {
   String? dropdownValue = null;
-  //List<>
+  final List<String> _allCities = ['Ankara', 'Bursa', 'İstanbul', 'Antalya'];
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class _DropDownButtonState extends State<DropDownButton> {
             dropdownValue = newValue!;
           });
         },
-        items: const [
+        /*   items: const [
           DropdownMenuItem(
             child: Text('Ankara şehri'),
             value: 'Ankara',
@@ -42,7 +42,13 @@ class _DropDownButtonState extends State<DropDownButton> {
             child: Text('Antalya şehri'),
             value: 'Antalya',
           )
-        ],
+        ],*/
+        items: _allCities.map(
+          (String city) => DropdownMenuItem(
+            child: Text(city),
+            value: city,
+          ),
+        ).toList(),//allCities listesindeki elemanları map yapısı ile listeye dönüştürüp dropDownMenu'ye atıyoruz
       ),
     );
   }

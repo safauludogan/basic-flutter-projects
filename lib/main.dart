@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'dropdown_button.dart';
+import 'popupmenu.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,9 +22,10 @@ class MyApp extends StatelessWidget {
                   color: Colors.purple, fontWeight: FontWeight.bold))),
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('DropdownButton Example'),
+          title: const Text('Popupmenu Example'),
+          //actions: const [PopupmenuExample()],//Appbar'da menu listesini ekler
         ),
-        body: const DropDownButton(),
+        body: const PopupmenuExample(),
       ),
     );
   }
