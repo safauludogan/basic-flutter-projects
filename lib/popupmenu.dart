@@ -9,6 +9,7 @@ class PopupmenuExample extends StatefulWidget {
 
 class _PopupmenuExample extends State<PopupmenuExample> {
   String _selectedCity = 'Ankara';
+  List<String> colors = ['mavi', 'yeşil', 'kırmızı', 'sarı'];
 
   @override
   Widget build(BuildContext context) {
@@ -16,14 +17,14 @@ class _PopupmenuExample extends State<PopupmenuExample> {
       child: PopupMenuButton<String>(
         onSelected: (String city) {
           print("Seçilen şehir $city");
-         /* setState(() {
+          /* setState(() {
             _selectedCity = city;
           });*/
         },
         //icon: Icon(Icons.add),
         //child: Text(_selectedCity),
         itemBuilder: (BuildContext context) {
-          return <PopupMenuEntry<String>>[
+          /*return <PopupMenuEntry<String>>[
             const PopupMenuItem(
               child: Text('Ankara'),
               value: 'Ankara',
@@ -36,7 +37,15 @@ class _PopupmenuExample extends State<PopupmenuExample> {
               child: Text('Sinop'),
               value: 'Sinop',
             ),
-          ];
+          ];*/
+          return colors//Bu yapı ile yukarıdaki gibi tek tek yazmak yerine liste halinde sıralama yapıyoruz.
+              .map(
+                (String color) => PopupMenuItem(
+                  child: Text(color),
+                  value: color,
+                ),
+              )
+              .toList();
         },
       ),
     );
